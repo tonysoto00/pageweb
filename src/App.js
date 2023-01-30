@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/carousel.css';
+import Navigation from './components/navigation';
+import Carousel from './components/carousel';
+import Footer from './components/footer';
+import Pageindex from './components/indexPage/pageindex';
+import Table from './components/table';
 
+import dataServicios from './data/servicios.json';
+
+//import { Component } from 'react';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <Navigation />
       </header>
-    </div>
-  );
-}
+      <main>
+      <Carousel />
+      <div className="container marketing">
+      <Pageindex />
 
-export default App;
+      <Table data ={dataServicios.dataervicios} th={['title','description','img','actions']}/>     
+      <Footer/>
+      </div>
+      </main>
+    </div>
+      );
+    }
+    
+    export default App;
