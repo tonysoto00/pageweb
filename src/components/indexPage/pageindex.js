@@ -1,14 +1,18 @@
 
 import React, { Component } from 'react';
-import Servi from '../servi';
-import Contacts from '../contacts';
+import Servi from '../generic/servi';
+import Contacts from '../generic/contacts';
+import Carousel from '../generic/carousel';
 
 class Pageindex extends Component {
   render() {
-    return (
+    return ( 
       <div>
-      <Servi />
-      <Contacts />
+       <Carousel />
+          <div className="container marketing">     
+          <Servi />
+          <Contacts />
+          </div>
       </div>
      )
   }
